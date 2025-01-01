@@ -1,7 +1,28 @@
 services:
-  app:
-    build: .
-    container_name: my-python-app
+  livekit-agent:
+    build: . # Supondo que você tenha um Dockerfile para o livekit-agent também no diretório atual
     env_file:
       - .env
-    restart: unless-stopped
+    volumes:
+      - .:/app
+    #depends_on: # Descomente se necessário
+    #  - opensips
+
+  opensips: 
+    image: opensips/opensips:latest
+    ports:
+      - "5061:5060/udp"
+      - "5061:5060/tcp"
+      - "8889:8888"
+
+  engine:
+    build: .
+    ports:
+      - "8080:80" # Exemplo: Mapeando a porta 80 do container para a porta 8080 no host
+    #volumes: # (Opcional) Adicione volumes se necessário
+    #  - ./engine/data:/app/data
+    #environment: # (Opcional) Adicione variáveis de ambiente se necessário
+    #  - ENV_VAR: value
+
+volumes:
+  opensips_data:
