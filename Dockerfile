@@ -10,8 +10,11 @@ COPY requirements.txt .
 # Instala as dependências
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia o arquivo Python para o diretório de trabalho
+# Copia o restante dos arquivos da aplicação para o diretório de trabalho
 COPY . .
- 
-# Comando para executar o script Python
-CMD ["python", "main.py"]
+
+# Define a variável de ambiente FLASK_APP para o arquivo principal da aplicação
+ENV FLASK_APP=main.py
+
+# Comando para executar a aplicação Flask
+CMD ["flask", "run", "--host", "0.0.0.0"]

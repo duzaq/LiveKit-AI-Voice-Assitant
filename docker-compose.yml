@@ -1,9 +1,10 @@
+version: '3.8'
 services:
-  python-app:
+  app:
     build: .
-    container_name: meu-python-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
     environment:
-      - MINHA_VARIAVEL_DE_AMBIENTE=valor  # Substitua pelas variáveis de ambiente necessárias
-    volumes: 
-      - .:/app  # Monta o diretório atual no contêiner (opcional)
-    command: python main.py  # Substitua pelo nome do seu arquivo Python
+      FLASK_APP: main.py
