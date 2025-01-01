@@ -6,7 +6,6 @@ WORKDIR /app
 
 # Copia os arquivos necessários para o container
 COPY main.py .
-COPY api.py . # Se o arquivo api.py existir
 COPY requirements.txt .
 COPY .env .
 
