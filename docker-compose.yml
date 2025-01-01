@@ -1,10 +1,8 @@
 version: '3.8'
 services:
-  app:
+  livekit-agent:
     build: .
-    ports:
-      - "5000:5000"
+    env_file:
+      - .env
     volumes:
-      - .:/app
-    environment:
-      FLASK_APP: main.py
+      - .:/app # Mapeia o diretório atual para o diretório /app no container (útil para desenvolvimento)
