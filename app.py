@@ -83,7 +83,7 @@ async def entrypoint(ctx: JobContext):
         if msg.message:
             asyncio.create_task(answer_from_text(msg.message))
 
-    await agent.say("Hey, how can I help you today?", allow_interruptions=True)
+    await agent.say("Olá, como posso ajudar você hoje?", allow_interruptions=True)
 
 
 if __name__ == "__main__":
