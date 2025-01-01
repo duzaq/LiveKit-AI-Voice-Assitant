@@ -13,4 +13,4 @@ COPY .env .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Define o comando para executar o aplicativo
-CMD ["python", "app.py"]
+CMD ["python", "app.py", "start"]
