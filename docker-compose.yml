@@ -1,7 +1,27 @@
+version: '3.8'
+
 services:
   livekit-agent:
     build: .
     env_file:
       - .env
     volumes:
-      - .:/app # Mapeia o diretório atual para o diretório /app no container (útil para desenvolvimento)
+      - .:/app
+    #depends_on: # Descomente se o agente depender do OpenSIPS
+    #  - opensips
+
+  opensips:
+    image: opensips/opensips:3.4-latest  # Você pode alterar para outra imagem se necessário
+    ports:
+      - "5060:5060/udp"
+      - "5060:5060/tcp"
+      - "8888:8888" # Ajuste as portas conforme a sua configuração
+    volumes:
+      - ./opensips/opensips.cfg:/etc/opensips/opensips.cfg  # Mapeia o arquivo de configuração do OpenSIPS
+      - ./opensips/opensipsctlrc:/root/.opensipsctlrc # (Opcional) Arquivo de controle
+    #environment: # Descomente se precisar de variáveis de ambiente para o OpenSIPS
+    #  - VAR1=value1
+    #  - VAR2=value2
+
+volumes:
+  opensips_data: # (Opcional) Se você precisar de um volume persistente para dados do OpenSIPS
