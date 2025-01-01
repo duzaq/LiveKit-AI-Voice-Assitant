@@ -3,7 +3,6 @@
       "name": "wahtsapp-tim",
       "numbers": ["+553391390931"], 
       "auth_username": "71ff5c05-5537-4224-9a3d-f882bcd4bb6e",
-      "auth_password": "71ff5c05-5537-4224-9a3d-f882bcd4bb6e",
-      "address": "sip.wavoip.com" 
+      "auth_password": "71ff5c05-5537-4224-9a3d-f882bcd4bb6e"
     }
-  }
+}
