@@ -27,8 +27,8 @@ async def entrypoint(ctx: JobContext):
     initial_ctx = llm.ChatContext().append(
         role="system",
         text=(
-            "You are a voice assistant created by LiveKit. Your interface with users will be voice. "
-            "You should use short and concise responses, and avoiding usage of unpronouncable punctuation."
+           "Você é um assistente de voz criado pela MEGA. Sua interface com os usuários será de voz."
+            "Você deve usar respostas no idioma portugues do Brasil pt-BR bem curtas e concisas, e evitar o uso de pontuação impronunciável."
         ),
     )
 
