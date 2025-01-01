@@ -12,6 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia o arquivo Python para o diretório de trabalho
 COPY . .
-
+ 
 # Comando para executar o script Python
 CMD ["python", "main.py"]
