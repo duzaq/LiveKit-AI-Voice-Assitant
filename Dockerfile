@@ -5,7 +5,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copia os arquivos necessários para o container
-COPY main.py .
+COPY app.py .
 COPY requirements.txt .
 COPY .env .
 
@@ -13,4 +13,4 @@ COPY .env .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Define o comando para executar o aplicativo
-CMD ["python", "main.py"]
+CMD ["python", "app.py"]
