@@ -3,6 +3,8 @@ services:
     build: . # Supondo que você tenha um Dockerfile para o livekit-agent também no diretório atual
     env_file:
       - .env
+    command: python app.py start  # Substitua "start" pelo comando desejado
+    restart: unless-stopped
     volumes:
       - .:/app
     #depends_on: # Descomente se necessário
