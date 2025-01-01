@@ -11,9 +11,9 @@ services:
   opensips:
     image: opensips/opensips:3.4-latest  # Você pode alterar para outra imagem se necessário
     ports:
-      - "5060:5060/udp"
-      - "5060:5060/tcp"
-      - "8888:8888" # Ajuste as portas conforme a sua configuração
+      - "5061:5060/udp"
+      - "5061:5060/tcp"
+      - "8889:8888" # Ajuste as portas conforme a sua configuração
     volumes:
       - ./opensips/opensips.cfg:/etc/opensips/opensips.cfg  # Mapeia o arquivo de configuração do OpenSIPS
       - ./opensips/opensipsctlrc:/root/.opensipsctlrc # (Opcional) Arquivo de controle
