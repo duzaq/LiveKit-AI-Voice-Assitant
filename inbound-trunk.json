@@ -1,5 +1,6 @@
 {
     "trunk": {
-      "name": "zoiper"
+      "name": "zoiper-inbound-trunk",
+       "allowed_addresses": ["0.0.0.0/0"]
     }
 }
