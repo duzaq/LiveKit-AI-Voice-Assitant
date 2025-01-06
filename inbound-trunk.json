@@ -1,8 +1,9 @@
-  "trunk": {
-    "name": "zoiper",
-    "numbers": ["+9999999999"], 
-    "auth_username": "sip-user",
-    "auth_password": "sip-pass",
-    "allowed_addresses": ["0.0.0.0/0"]
-  }
+{
+    "trunk": {
+      "name": "wahtsapp-tim",
+      "numbers": ["+9999999999"], 
+      "auth_username": "fabioduzaq",
+      "auth_password": "10Mega20*16",
+      "allowed_addresses": ["0.0.0.0/0"]
+    }
 }
